@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duck Game</title>
+    <style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+    
+    * {
+        box-sizing: inherit;
+    }
+        
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #game-container {
+            
+            position: relative;
+            display: inline-block;
+            width: 100vw;
+            background-image: url(duckhunt.jpeg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            border: 2px solid #000;
+            overflow: hidden;
+        }
+        .duck {
+            position: absolute;
+            height: 100px;
+            width: 100px;
+        }
+        #game-over {
+            display: none;
+        }
+        #game-stats{
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 24px; 
+            font-weight: bold; 
+            display: flex;
+            justify-content: flex-start;
+        }
+        #game-over{
+            display: none;
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 0, 0, 0.8);
+            padding: 30px; 
+            font-size: 36px; 
+            color: white;
+            border-radius: 10px;
+            font-weight: bold;
+
+        }
+        #replay-button {
+            display: none;
+            font-size: 18px;
+            padding: 10px 20px;
+            position: relative;
+            top: 90%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <p id="game-stats">Total clicks: 0 | Score: 0 | Misses: 0</p>
+        <p id="game-over">Game Over! You missed too many ducks!</p>
+        <button id="replay-button">Replay</button>
+    </div>
+    <audio id="duck-kill-sound" src="turkeyshoot-89314.mp3"></audio>
+<audio id="duck-miss-sound" src="duck-quacking-37392.mp3"></audio>
+
+   
+
+    <script src="src.js">
+
+    </script>
+</body>
+</html>
