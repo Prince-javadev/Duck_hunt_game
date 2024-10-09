@@ -25,7 +25,7 @@ function Yposition() {
 function moveDuck(duck) {
     let xPos = 0;
     let yPos = Yposition();
-    let xSpeed = Math.random() * 3 + 2;
+    let xSpeed = Math.random() * 3 + 5;
     let ySpeed = Math.random() * 3 - 2.5;
 
     function animate() {
@@ -38,6 +38,7 @@ function moveDuck(duck) {
         if (xPos > gameContainer.offsetWidth) {
             if (currentDucks.includes(duck)) {
                 gameContainer.removeChild(duck);
+                createDuck();
                 currentDucks = currentDucks.filter(d => d !== duck);
                 duck_miss_sound.play();
                 misses++;
@@ -115,7 +116,7 @@ function startDuckInterval(){
         if (!gameOver) {
             createDuck();
         }
-    }, 1000); 
+    }, 1900); 
 
 }
 replayButton.addEventListener('click', resetGame);
